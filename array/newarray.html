@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script type="text/javascript">
+    // 添加数量
+    var arr = [
+      {id: "10010", labelName: "确认过眼神你就是对的人", labelCount: 13},
+      {id: "10009", labelName: "比心", labelCount: 20},
+      {id: "10012", labelName: "对你的敬仰犹如滔滔江水", labelCount: 4},
+      {id: "10002", labelName: "解答棒棒哒", labelCount: 4}
+    ]
+    const newList = arr.map((item) => {
+      return {
+        name: item.id,
+        age: item.labelName,
+        count: 1
+      };
+    })
+    console.log(newList)
+    // 重建数组
+    var sumlist = []
+    function createdObj (key, value) {
+      var data = {}
+      data[key] = value
+      return data
+    }
+    for (index in arr) {
+      var arrKey = arr[index].id
+      var arrSum = {
+        name: arr[index].labelName,
+        count: arr[index].labelCount
+      }
+      var arrObj = createdObj(arrKey, arrSum)
+      sumlist.push(arrObj)
+    }
+    console.log(sumlist) // 新定义的数组
+    // 添加新的数组
+    var addlabels = [
+      {
+        id: '10009',
+        labelName: '比心'
+      },
+      {
+        id: '10002',
+        labelName: '解答棒棒哒'
+      },
+      {
+        id: '10003',
+        labelName: '佛系青年'
+      }
+    ]
+    console.log(addlabels)
+    // 过滤添加数量
+    var newadd = addlabels.map((item) => {
+      return {
+        id: item.id,
+        name: item.labelName,
+        count: 1
+      }
+    })
+    console.log(newadd)
+    var newdefarr = []
+    for (index in newadd) {
+      var arrKey = newadd[index].id
+      var arrSum = {
+        name: newadd[index].name,
+        count: newadd[index].count
+      }
+      var arrObj = createdObj(arrKey, arrSum)
+      newdefarr.push(arrObj)
+    }
+    console.log(newdefarr) // 新定义的添加元素
+    sumlist = sumlist.concat(newdefarr)
+    console.log(sumlist) // 将新添加的元素与原元素合并
+    // 通过id去重
+    var newArr = []
+    sumlist.forEach((item, index) => {
+      // var newitem = Object.keys(item)
+      // var newValue = Object.values(item)
+      // console.log(newitem)
+      // console.log(newValue[0].name)
+    })
+  </script> -->
+  <script type="text/javascript">
+    const target = [
+      {id: "10010", labelName: "确认过眼神你就是对的人", labelCount: 13},
+      {id: "10009", labelName: "比心", labelCount: 20},
+      {id: "10012", labelName: "对你的敬仰犹如滔滔江水", labelCount: 4},
+      {id: "10002", labelName: "解答棒棒哒", labelCount: 4}
+    ]
+    const source = [
+      {
+        id: '10009',
+        labelName: '比心'
+      },
+      {
+        id: '10002',
+        labelName: '解答棒棒哒'
+      },
+      {
+        id: '10003',
+        labelName: '佛系青年'
+      }
+    ]
+    
+    const curry = (fn) => {
+      const _c = (restNum, argsList) => restNum === 0
+                  ? fn(...argsList)
+                  : (...x) => _c(restNum - x.length, argsList.concat(x))
+      return _c(fn.length, [])
+    }
+    const compose = (f, g) => (x) => f(g(x))
+    const map = curry((f, arr) => arr.map(f))
+    const reduce = curry((f, val, arr) => arr.reduce(f, val))
+    //  count + 1                         对象更改
+    const sourceAddCount = map(item => Object.assign(item, { labelCount: 1 }))
+    //                                     回调   初始值
+    const removalAndIncreaseCount = reduce((val, item) => {
+      const curTar = val.findIndex(t => t.id === item.id)
+      if (curTar < 0) {
+        val.push(item)
+      } else {
+        Object.assign(val[curTar], { labelCount: item.labelCount + 1 })
+      }
+      return val
+    })
+    const mergeLabel = compose(removalAndIncreaseCount, sourceAddCount)
+    mergeLabel(source)(target)
+    // debugger
+  </script>
+</body>
+</html>

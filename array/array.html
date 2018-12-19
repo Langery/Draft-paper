@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 添加数量
+    var arr = [
+      {id: "10010", labelName: "确认过眼神你就是对的人", labelCount: 13},
+      {id: "10009", labelName: "比心", labelCount: 20},
+      {id: "10012", labelName: "对你的敬仰犹如滔滔江水", labelCount: 4},
+      {id: "10002", labelName: "解答棒棒哒", labelCount: 4}
+    ]
+    const newList = arr.map((item) => {
+      return {
+        name: item.id,
+        age: item.labelName,
+        count: 1
+      };
+    })
+    console.log(newList)
+    // 重建数组
+    var sumlist = []
+    function createdObj (key, value) {
+      var data = {}
+      data[key] = value
+      return data
+    }
+    for (index in arr) {
+      var arrKey = arr[index].id
+      var arrSum = {
+        name: arr[index].labelName,
+        count: arr[index].labelCount
+      }
+      var arrObj = createdObj(arrKey, arrSum)
+      sumlist.push(arrObj)
+    }
+    console.log(sumlist) // 新定义的数组
+    // 添加新的数组
+    var addlabels = [
+      {
+        id: '10009',
+        labelName: '比心'
+      },
+      {
+        id: '10002',
+        labelName: '解答棒棒哒'
+      },
+      {
+        id: '10003',
+        labelName: '佛系青年'
+      }
+    ]
+    console.log(addlabels)
+    // 过滤添加数量 Array
+    var newadd = addlabels.map((item) => {
+      return {
+        id: item.id,
+        name: item.labelName,
+        count: 1
+      }
+    })
+    console.log(newadd)
+    var newdefarr = []
+    for (index in newadd) {
+      var arrKey = newadd[index].id
+      var arrSum = {
+        name: newadd[index].name,
+        count: newadd[index].count
+      }
+      var arrObj = createdObj(arrKey, arrSum)
+      newdefarr.push(arrObj)
+    }
+    console.log(newdefarr) // 新定义的添加元素
+    // Object
+    var addObj = new Object()
+    var oldObj = new Object()
+    var obj = new Object()
+    function createNewObj(name){
+      //1、原料
+      var key = name.id
+      var value = {
+        name: name.labelName,
+        count: 0
+      }
+      obj[key] = value
+      return obj
+    }
+    function createOldObj(name){
+      //1、原料
+      var key = name.id
+      var value = {
+        name: name.labelName,
+        count: name.labelCount
+      }
+      obj[key] = value
+      return obj
+    }
+    // 原数据转为 Object
+    arr.forEach(item => {
+      oldObj = createOldObj(item)
+    })
+    console.log(oldObj)
+    // 添加的内容转为 Object
+    addlabels.forEach(item => {
+      addObj = createNewObj(item)
+    })
+    console.log(addObj)
+  </script>
+</body>
+</html>

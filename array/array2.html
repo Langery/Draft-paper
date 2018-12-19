@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 添加数量
+    var arr = [
+      {id: "10010", labelName: "you are the right man", labelCount: 13},
+      {id: "10009", labelName: "loved", labelCount: 20},
+      {id: "10012", labelName: "Love for you is like a torrent of water", labelCount: 4},
+      {id: "10002", labelName: "great", labelCount: 4}
+    ]
+    // 添加新的数组
+    var addlabels = [
+      {
+        id: '10009',
+        labelName: 'loved'
+      },
+      {
+        id: '10002',
+        labelName: 'great'
+      },
+      {
+        id: '10003',
+        labelName: '佛系青年'
+      }
+    ]
+    console.log(addlabels)
+    // 过滤添加数量 Array
+    // var newadd = addlabels.map((item) => {
+    //   return {
+    //     id: item.id,
+    //     name: item.labelName,
+    //     count: 1
+    //   }
+    // })
+    // console.log(newadd)
+    var otherAdd = addlabels.map(item => Object.assign(item, { labelCount: 1 }))
+    console.log(otherAdd) // 等同于 => 过滤添加数量
+    var endArr = arr.reduce((val, item) => {
+      var curTar = val.findIndex(t => t.id === item.id)
+
+      if (curTar < 0) {
+        val.push(item)
+      } else {
+        Object.assign(val[curTar], { labelCount: item.labelCount + 1 })
+      }
+      return val
+    }, otherAdd)
+    // 处理后的数据
+    console.log(endArr)
+  </script>
+</body>
+</html>
