@@ -41,7 +41,7 @@
     // })
     // console.log(newadd)
     var otherAdd = addlabels.map(item => Object.assign(item, { labelCount: 1 }))
-    console.log(otherAdd) // 等同于 => 过滤添加数量
+    console.log(otherAdd) // 等同于 => 过滤添加数量 Array
     var endArr = arr.reduce((val, item) => {
       var curTar = val.findIndex(t => t.id === item.id)
 
