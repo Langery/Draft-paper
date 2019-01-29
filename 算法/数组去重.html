@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组去重</title>
+</head>
+<body>
+  <script type="text/javascript">
+    let removal = function(arr) {
+      let otherarr = {}
+      let data = []
+      for (let i = 0; i < arr.length;i++) {
+        if (!otherarr[arr[i]]){
+          console.log(!otherarr[arr[i]])
+          otherarr[arr[i]] = true
+          data.push(arr[i])
+        }
+      }
+      return data
+    }
+    var arr = [1, 3, 5, 7, 11, 4, 5, 3, 8]
+        index = removal(arr)
+    console.log(index)
+  </script>
+</body>
+</html>
