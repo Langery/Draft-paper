@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组累加求和</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 1
+    function sum1(arr) {
+      var s = 0
+      for (var i = arr.length - 1;i >= 0; i--) {
+        s += arr[i]
+      }
+      return s
+    }
+    var arr = [0, 1, 2, 3, 4]
+    // console.log(sum1(arr))
+    // 2
+    // reduce 用法
+    function sum2 (arr) {
+      return arr.reduce(function (prev, curr) {
+        // console.log(prev) 初始值
+        // console.log(curr) 被处理元素
+        return prev + curr
+      })
+    }
+    // console.log(sum2(arr))
+    // 3
+    function sum3 (arr) {
+      var s = 0
+      arr.forEach((val) => {
+        // console.log(val)
+        s += val
+      })
+      return s
+    }
+    console.log(sum3(arr))
+  </script>
+</body>
+</html>
