@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Websocket</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var a = '10.10.0.1/'
+    var b = a + 'hello'
+    console.log(b)
+    // var wsServer = 'ws://123.207.167.163:9010/'
+    // var websocket = new WebSocket(wsServer)
+    // console.log(websocket)
+    // var newWeb = wsServer + 'hello'
+    // console.log(newWeb)
+
+    // 创建WebSocket对象 初始化
+    function webs (formId) {
+      var ws = new WebSocket('ws://123.207.167.163:9010/' + formId)
+      var data = 'one'
+      this.webInfor(ws, data)
+    }
+    // websocket 信息处理
+    function webInfor (ws, data) {
+      console.log(ws)
+      ws.onmessage = function (event, data) {
+        // var data = event.data
+        console.log(data)
+      }
+    }
+    webs('ajaxchattest')
+  </script>
+</body>
+</html>

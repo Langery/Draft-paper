@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Websocket</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 创建WebSocket对象 初始化
+    function webs (formId, data) {
+      var ws = new WebSocket('ws://123.207.167.163:9010/' + formId)
+      this.webInfor(ws, data)
+    }
+    // websocket 信息处理
+    function webInfor (ws, data) {
+      ws.onmessage = function (event, data) {
+        if (ws.readyState === WebSocket.OPEN) {
+          // ws.send(data)
+          console.log(data)
+        } else {
+        }
+      }
+    }
+    textData = `{"agent_id": "' + agent_id + '", "sys_flag":"' + sys_flag + '"}`
+    var textHelper = webs('onlineTextAssistant', textData)
+  </script>
+</body>
+</html>
