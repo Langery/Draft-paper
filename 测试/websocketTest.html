@@ -16,21 +16,22 @@
     }
 
     function webs (formId) {
-      ws = new WebSocket('ws://10.3.65.139:22001/' + formId)
+      ws = new WebSocket('ws://10.3.63.87:22001/' + formId)
       console.log("*********已建立连接");
     }
 
+    var testdata = {
+      call_id:"2222",
+      agent_id:"wangsixue",
+      user_id:"2222",
+      text:"i want to know the world",
+      seq:1,
+      direction:0
+    }
 
     function webInfor () {
-      var testdata = {
-        call_id:"2222",
-        agent_id:"wangsixue",
-        user_id:"2222",
-        text:"i want to know the world",
-        seq:1,
-        direction:0
-      }
       console.log("*********发送数据");
+      console.log(JSON.stringify(testdata))
       ws.send(JSON.stringify(testdata));
     }
   </script>
