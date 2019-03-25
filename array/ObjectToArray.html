@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Object to array</title>
+</head>
+<body>
+  <script>
+    let obj = {'未完成':5, '已完成':8, '待确认':4, '已取消':6}
+    var newObj = {}
+    var arr = []
+    for (let i in obj) {
+      let o = {}
+      o[i] = obj[i]
+      arr.push(o)
+    }
+    // console.log(arr) // [{"未完成":5},{"已完成":8},{"待确认":4},{"已取消":6}]
+    var theObj = {
+      name: 'lahy'
+    }
+    // 计时器
+    setInterval(() => {
+      arr.push(arr[0])
+      arr.shift()
+      newObj = arr.reduce((res, obj) => Object.assign({}, res, obj), {})
+      // console.log(arr)
+      console.log(newObj)
+    }, 2000)
+  </script>
+</body>
+</html>
