@@ -10,16 +10,17 @@
   <script>
     function formatDateTime (inputTime) {
       var fnTime = timeData(inputTime)
-      console.log(fnTime)
-      var x = fnTime
-      var time = new Date(x)
-      var timeNum = 8
-      time.setHours(time.getHours() + timeNum)
-      var newTime = timeData(time)
-      return newTime
+      var time = new Date(fnTime)
+      var time = timeData(time)
+      // var timeNum = 8
+      // time.setHours(time.getHours() + timeNum)
+      // var newTime = timeData(time)
+      return time
     }
     function timeData (data) {
-      var date = new Date(Number(data))
+      console.log(data)
+      console.log(typeof data)
+      var date = typeof data === 'string' ? new Date(Number(data) * 1000) : new Date(data)
       var y = date.getFullYear()
       var m = date.getMonth() + 1
       m = m < 10 ? ('0' + m) : m
@@ -34,9 +35,9 @@
       var fnTime = y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second
       return fnTime
     }
-    var time = '14526564778'
-    var a = formatDateTime(time)
-    console.log(a)
+    console.log('通话开始时间：' + formatDateTime('1556093621'))
+    console.log('通话结束时间：' + formatDateTime('1556093634'))
+    console.log(formatDateTime('1556094003'))
   </script>
 </body>
 </html>
