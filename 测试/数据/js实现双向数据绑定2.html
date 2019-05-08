@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js实现双向数据绑定2</title>
+  <script src="./commonFun.js"></script>
+</head>
+<body>
+  <input type="text" id="inputId" value="">
+  <span id="spanId">{{test}}</span>
+  <script>
+    var inputId = returnName('inputId')
+    var spanId = returnName('spanId')
+    var data = {
+      test: ''
+    }
+    inPage (() => {
+      inputId.value = 'hello'
+    })
+    Object.defineProperty(data, 'test', {
+      get: () => {
+        console.log(test)
+      },
+      set: (newVal) => {
+        inputId.value = newVal
+        spanId.innerHTML = newVal
+      }
+    })
+    document.addEventListener('keyup', e => {
+      data.test = e.target.value
+    })
+    data.test = ''
+  </script>
+</body>
+</html>
