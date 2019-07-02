@@ -1,5 +1,12 @@
 ## 工作笔记
 
+### 相关链接
+
+1. [Vue_VueResource](https://segmentfault.com/a/1190000007087934)
+2. [Axios的拦截器原理以及请求等待重发的实现](https://www.jianshu.com/p/115b4c79a75d)
+3. [Vue.js简单集成ACE代码编辑器](https://blog.csdn.net/YoshinoNanjo/article/details/82978668)
+4. [axios 官网](http://www.axios-js.com/)
+
 ### axios
 
 #### axios拦截器
