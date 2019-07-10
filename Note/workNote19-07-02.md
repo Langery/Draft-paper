@@ -6,6 +6,7 @@
 2. [Axios的拦截器原理以及请求等待重发的实现](https://www.jianshu.com/p/115b4c79a75d)
 3. [Vue.js简单集成ACE代码编辑器](https://blog.csdn.net/YoshinoNanjo/article/details/82978668)
 4. [axios 官网](http://www.axios-js.com/)
+5. [ES6 Map常用方法总结](https://segmentfault.com/a/1190000010470987)
 
 ### axios
 
