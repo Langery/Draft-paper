@@ -4,6 +4,8 @@
 2. [js高阶函数应用—函数柯里化和反柯里化](https://www.cnblogs.com/yifeng555/p/8878474.html)
 3. [JS高级函数--------map/reduce](https://blog.csdn.net/baidu_36065997/article/details/79079880)
 4. [简单总结ES6的Map](https://www.jianshu.com/p/332ed3a9cb8b?utm_campaign)
+5. [Serverless初探](https://cloud.tencent.com/developer/article/1200169)
+6. [当我们聊Serverless时你应该知道这些](https://www.jianshu.com/p/c847bc77e027)
 
 ### D3.js
 
