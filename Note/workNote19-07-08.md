@@ -6,6 +6,11 @@
 4. [简单总结ES6的Map](https://www.jianshu.com/p/332ed3a9cb8b?utm_campaign)
 5. [Serverless初探](https://cloud.tencent.com/developer/article/1200169)
 6. [当我们聊Serverless时你应该知道这些](https://www.jianshu.com/p/c847bc77e027)
+7. [花了 1000G，我终于弄清楚了 Serverless 是什么（上）：什么是 Serverless 架构？](https://segmentfault.com/a/1190000012042629?utm_source=tag-newest)
+
+### idea
+
+1. Unix哲学
 
 ### D3.js
 
