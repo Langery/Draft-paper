@@ -6,6 +6,13 @@
 4. [简单总结ES6的Map](https://www.jianshu.com/p/332ed3a9cb8b?utm_campaign)
 5. [Serverless初探](https://cloud.tencent.com/developer/article/1200169)
 6. [当我们聊Serverless时你应该知道这些](https://www.jianshu.com/p/c847bc77e027)
+7. [花了 1000G，我终于弄清楚了 Serverless 是什么（上）：什么是 Serverless 架构？](https://segmentfault.com/a/1190000012042629?utm_source=tag-newest)
+8. [js中的广度优先遍历（BFS）和深度优先遍历（DFS）](https://www.jianshu.com/p/b4d8085e84bd)
+9. [BFS,DFS 算法原理及js实现](https://segmentfault.com/a/1190000012457151#articleHeader0)
+
+### idea
+
+1. Unix哲学
 
 ### D3.js
 
