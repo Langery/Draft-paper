@@ -14,15 +14,13 @@
       return this
     }
     Array.prototype.remove = remove
-    function removeId (arr, str) {
-      for (var i in arr) {
-        if (arr[i].id == str) {
-          arr.splice(i, 1)
-        } else {
-          return arr
+    function removeId (str) {
+      for (var i in this) {
+        if (this[i].id == str) {
+          this.splice(i, 1)
         }
       }
-      return arr
+      return this
     }
     Array.prototype.removeId = removeId
     var op = [1, 2, 3]
@@ -38,10 +36,10 @@
       }
     ]
     console.log(op.remove(2))
-    console.log(removeId(arr, 1))
-    console.log(removeId(arr, 2))
-    console.log(removeId(arr, 3))
-    // console.log(removeId(arr, 4))
+    console.log(arr.removeId(1))
+    console.log(arr.removeId(2))
+    console.log(arr.removeId(3))
+    console.log(arr.removeId(4))
   </script>
 </body>
 </html>
