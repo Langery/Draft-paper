@@ -6,3 +6,4 @@
   4. [实施微前端的六种方式](https://segmentfault.com/a/1190000015566927)
   5. [深入理解 JavaScript 中的 class](https://segmentfault.com/a/1190000008338987)
   6. [基础图类Basic Plots 15 - 和弦图Chord Chart](http://madlogos.github.io/recharts/Basic_Plots_12_Chord_cn.html#1_%E4%BB%8B%E7%BB%8Dintroduction)
+  7. [详解JS函数柯里化](https://www.jianshu.com/p/2975c25e4d71)
