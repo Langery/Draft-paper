@@ -8,24 +8,22 @@
 </head>
 <body>
   <script>
-    function removeByValue (arr, val) {
-      // if (arr.indexOf(val) == -1) {
-      //   var pushIn = {
-      //     id: val
-      //   }
-      //   arr.push(pushIn)
-      //   console.log(arr)
-      // } else {
-        for (var i = 0; i < arr.length; i++) {
-          if (arr[i].id == val) {
-            arr.splice(i, 1)
-            console.log(arr)
-            // if (arr.length == 0) return []
-            break
-          }
-        }
-      // }
+    function remove (str) {
+      var index = this.indexOf(str)
+      if (index > -1) this.splice(index, 1)
+      return this
     }
+    Array.prototype.remove = remove
+    function removeId (str) {
+      for (var i in this) {
+        if (this[i].id == str) {
+          this.splice(i, 1)
+        }
+      }
+      return this
+    }
+    Array.prototype.removeId = removeId
+    var op = [1, 2, 3]
     var arr = [
       {
         id: 1
@@ -37,7 +35,11 @@
         id: 3
       }
     ]
-    console.log(removeByValue(arr, 2))
+    console.log(op.remove(2))
+    console.log(arr.removeId(1))
+    console.log(arr.removeId(2))
+    console.log(arr.removeId(3))
+    console.log(arr.removeId(4))
   </script>
 </body>
 </html>
