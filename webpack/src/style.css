@@ -1,4 +1,8 @@
-.hello {
+/* .hello {
   color: red;
   background: url('./icon.jpg');
+} */
+body{
+  /* background: blue; */
+  background: red;
 }
