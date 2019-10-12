@@ -1,18 +1,32 @@
 import _ from 'lodash';
-import './style.css';
-import Icon from './icon.jpg'
+// import './style.css';
+// import Icon from './icon.jpg'
+// import Data from './data.xml'
+
+import printMe from './print'
 
 function component () {
   var element = document.createElement('div')
 
-  element.innerHTML = _.join(['hello', 'webpack'], ' ')
-  // css
-  element.classList.add('hello')
+  var btn = document.createElement('button')
 
-  // image
-  var myIcon = new Image()
-  myIcon.src = Icon
-  element.appendChild(myIcon)
+  element.innerHTML = _.join(['hello', 'webpack'], ' ')
+
+  btn.innerHTML = "Click me and check the console"
+  btn.onclick = printMe
+  element.appendChild(btn)
+
+  /*
+    // css
+    element.classList.add('hello')
+
+    // image
+    var myIcon = new Image()
+    myIcon.src = Icon
+    element.appendChild(myIcon)
+    // Data
+    console.log(Data)
+  */
 
   return element
 }
