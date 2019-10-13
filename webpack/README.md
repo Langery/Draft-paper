@@ -2,9 +2,13 @@
 
 > link: [webpack 中文文档](https://www.webpackjs.com/)
 
+> unfinish
+
+- [ ] 生产环境构建
+
 ## Note
 
-1. Error:CleanWebpackPlugin is not a constructor
+1. Error: CleanWebpackPlugin is not a constructor
 ``` javascript
   // 错误写法，但是官网是这么写的，但是报错！！！
   const CleanWebpackPlugin = require("clean-webpack-plugin")
@@ -19,5 +23,28 @@
     plugins: [
       new CleanWebpackPlugin()
     ]
+  }
+```
+2. Error: webpack.optimize.CommonsChunkPlugin has been removed, please use config.optimization.splitChunks instead.
+```javascript
+  // 官网写法
+  const webpack = require('webpack')
+
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'common'
+  }),
+  // 查到的写法
+  module.exports = {
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          connons: {
+            name: 'commons',
+            chunks: 'initial',
+            minChunks: 2
+          }
+        }
+      }
+    }
   }
 ```
