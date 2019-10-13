@@ -9,7 +9,8 @@ module.exports = {
     // app: './src/index.js',
     // print: './src/print.js'
     // index: './src/index.js',
-    index: './src/getindex.js',
+    // index: './src/getindex.js',
+    index: './src/lazyindex.js',
     // another: './src/another-module.js'
   },
   devtool: 'inline-source-map',
