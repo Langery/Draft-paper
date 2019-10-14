@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
+// const WorkboxPlugin = require('')
 
 module.exports = {
   // entry: './src/index.js',
@@ -35,6 +36,10 @@ module.exports = {
     }
   },
   plugins: [
+    // new WorkboxPlugin.GenerateSW({
+    //   clientsClaim: true,
+    //   skipWaiting: true
+    // }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       // title: 'Output Message'
@@ -56,8 +61,16 @@ module.exports = {
     publicPath: '/'
   },
   mode: "production",
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']

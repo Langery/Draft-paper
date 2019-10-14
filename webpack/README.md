@@ -5,8 +5,9 @@
 > unfinish
 
 - [ ] 生产环境构建
-- [ ] 创建library
+- [ ] 创建 library
 - [ ] shimming
+- [ ] 添加 Workbox
 
 ## Note
 
