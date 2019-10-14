@@ -40,6 +40,10 @@ module.exports = {
       // title: 'Output Message'
       title: 'Code Message'
     }),
+    new webpack.ProvidePlugin({
+      // _: 'lodash'
+      join: ['lodash', 'join']
+    }),
     new webpack.NamedModulesPlugin()
     // new webpack.HotModuleReplacementPlugin()
   ],

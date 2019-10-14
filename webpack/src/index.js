@@ -11,7 +11,9 @@ function component () {
 
   // var btn = document.createElement('button')
 
-  element.innerHTML = _.join(['hello', 'webpack'], ' ')
+  // element.innerHTML = _.join(['hello', 'webpack'], ' ')
+  element.innerHTML = join(['hello', 'webpack'], ' ')
+
   element.onclick = printMe.bind(null, 'hello webpack!')
 
   // btn.innerHTML = "Click me and check the console"

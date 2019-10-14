@@ -5,6 +5,8 @@
 > unfinish
 
 - [ ] 生产环境构建
+- [ ] 创建library
+- [ ] shimming
 
 ## Note
 
