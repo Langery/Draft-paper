@@ -10,37 +10,43 @@ module.exports = {
     // print: './src/print.js'
     // index: './src/index.js',
     // index: './src/getindex.js',
-    index: './src/lazyindex.js',
+    // index: './src/lazyindex.js',
     // another: './src/another-module.js'
+    main: './src/index.js',
+    vendor: [
+      'lodash'
+    ]
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     hot: true
   },
-  // optimization: {
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       connons: {
-  //         name: 'commons',
-  //         chunks: 'initial',
-  //         minChunks: 2
-  //       }
-  //     }
-  //   }
-  // },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        connons: {
+          // name: 'commons',
+          name: 'manifest',
+          chunks: 'initial',
+          minChunks: 2
+        }
+      }
+    }
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       // title: 'Output Message'
       title: 'Code Message'
     }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.NamedModulesPlugin()
+    // new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     // filename: 'bundle.js',
-    filename: '[name].bundle.js',
+    // filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
     chunkFilename: '[name].bundle.js',
     publicPath: '/'

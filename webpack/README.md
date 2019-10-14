@@ -48,3 +48,13 @@
     }
   }
 ```
+3. Cannot use [chunkhash] or [contenthash] for chunk in '[name].[chunkhash].js' 
+
+&emsp;将plugins中的热替换插件注释掉
+``` javascript
+  module.exports = {
+    plugins: [
+      // new webpack.HotModuleReplacementPlugin()
+    ]
+  }
+```

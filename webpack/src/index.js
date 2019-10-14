@@ -11,16 +11,17 @@ function component () {
 
   // var btn = document.createElement('button')
 
-  // element.innerHTML = _.join(['hello', 'webpack'], ' ')
+  element.innerHTML = _.join(['hello', 'webpack'], ' ')
+  element.onclick = printMe.bind(null, 'hello webpack!')
 
   // btn.innerHTML = "Click me and check the console"
   // btn.onclick = printMe
   // element.appendChild(btn)
 
-  element.innerHTML = [
-    'Hello webpack!',
-    '5 cubed is equal to' + cube(5)
-  ].join('\n\n')
+  // element.innerHTML = [
+  //   'Hello webpack!',
+  //   '5 cubed is equal to' + cube(5)
+  // ].join('\n\n')
 
   /*
     // css
