@@ -8,6 +8,7 @@
 - [ ] 创建 library
 - [ ] shimming
 - [ ] 添加 Workbox
+- [ ] 迁移到新版本
 
 ## Note
 
