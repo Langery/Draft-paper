@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 // const WorkboxPlugin = require('')
+// const CopyWebpackPlugin = require('')
 
 module.exports = env => {
 
@@ -23,6 +24,12 @@ module.exports = env => {
       vendor: [
         'lodash'
       ]
+    },
+    watch: false,
+    watchOptions: {
+      poll: 1000,
+      aggregateTimeout: 1000,
+      ignored: /node_modules/
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -46,6 +53,7 @@ module.exports = env => {
       //   clientsClaim: true,
       //   skipWaiting: true
       // }),
+      new webpack.BannerPlugin('Copyright © 2019'),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         // title: 'Output Message'
@@ -68,6 +76,10 @@ module.exports = env => {
     },
     mode: "production",
     resolve: {
+      alias: {},
+      mainFields: ['style', 'main'],
+      extensions: ['js', 'vue'],
+      modules: [path.resolve(__dirname, './src/'), 'node_modules'],
       extensions: [ '.tsx', '.ts', '.js' ]
     },
     module: {
