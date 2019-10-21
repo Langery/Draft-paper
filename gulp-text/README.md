@@ -6,7 +6,7 @@
 
 - [ ]  待续...
 
-## Note
+## Note & Error problem
 
 1. 四个默认API
 - gulp.task()
