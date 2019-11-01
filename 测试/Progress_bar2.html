@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>进度条2</title>
+</head>
+<body>
+  <progress max="100" value="0" id="pg"></progress>
+  <script>
+    var pg=document.getElementById('pg');
+    var timer = setInterval(function(e){
+      // if(pg.value!=100) pg.value++;
+      // else pg.value=0;
+      if (pg.value >= 80) {
+        window.clearInterval(timer)
+        pg.value = 100
+      } else {
+        pg.value++;
+      }
+    },100);
+  </script>
+</body>
+</html>
