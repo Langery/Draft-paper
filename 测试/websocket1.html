@@ -8,18 +8,13 @@
 </head>
 <body>
   <script type="text/javascript">
-    var a = '10.10.0.1/'
+    var a = 'xx.xx.x.x/'
     var b = a + 'hello'
     console.log(b)
-    // var wsServer = 'ws://123.207.167.163:9010/'
-    // var websocket = new WebSocket(wsServer)
-    // console.log(websocket)
-    // var newWeb = wsServer + 'hello'
-    // console.log(newWeb)
 
     // 创建WebSocket对象 初始化
     function webs (formId) {
-      var ws = new WebSocket('ws://123.207.167.163:9010/' + formId)
+      var ws = new WebSocket('ws://xxx.xxx.xxx.xxx:xxxx/' + formId)
       var data = 'one'
       this.webInfor(ws, data)
     }
