@@ -21,6 +21,20 @@
     var str = 'lahyStone'
     var te = RegExp(/ok/) // 通过修改//里的值进行判断
     console.log(te.test(str))
+
+    var getString = 'adcd String;adnm String'
+    console.log(getString)
+    var stringResult = getString.split(';',)
+    // console.log(stringResult)
+    var backArr = []
+    stringResult.forEach(item => {
+      // console.log(item)
+      item = item.split(' ')
+      // console.log(item)
+      backArr.push(item)
+    })
+    // console.log(stringResult)
+    console.log(backArr)
   </script>
 </body>
 </html>
