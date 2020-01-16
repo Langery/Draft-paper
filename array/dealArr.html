@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+     * 目前已有一个数组：
+     * var arr = [
+     *  {
+     *    date: 1,
+     *    infor: 'hello'
+     *  },
+     *  {
+     *    date: 2,
+     *    infor: 'good'
+     *  },
+     *  {
+     *    date: 1,
+     *    infor: 'ok'
+     *  },
+     *  {
+     *    date: 3,
+     *    infor: 'code'
+     *  }
+     * ]
+     * 目的：把目标数据按照 date 进行分类，但是 arr 里每次获取到的数据多少不确定
+     * 目标数组：
+     * date1 = [
+     *  {
+     *    date: 1,
+     *    infor: 'hello'
+     *  },
+     *  {
+     *    date: 1,
+     *    infor: 'ok'
+    *    },
+     * ]
+     * date2 = [
+     *  {
+     *    date: 2,
+     *    infor: 'good'
+     *  }
+     * ]
+     * date3 = [
+     *  {
+     *    date: 3,
+     *    infor: 'code'
+     *  }
+     * ]
+     */
+    var arr = [
+      {
+        date: 1,
+        infor: 'hello'
+      },
+      {
+        date: 2,
+        infor: 'good'
+      },
+      {
+        date: 1,
+        infor: 'ok'
+      },
+      {
+        date: 4,
+        infor: 'code'
+      }
+    ]
+    console.log(arr)
+    var map = new Map();
+    arr.map((item)=>{
+      if(map.has(item.date)){
+        map.get(item.date).push(item);
+      }else{
+        map.set(item.date,[]);
+        map.get(item.date).push(item);
+      }
+    })
+    console.log(map);
+    // for (var k in map) {
+    //   console.log(map)
+    // }
+    map.forEach(item => {
+      console.log(item)
+    })
+    for(var [k,v] of map){
+      console.log(k)
+      console.log(v)
+    }
+
+  </script>
+</body>
+</html>
