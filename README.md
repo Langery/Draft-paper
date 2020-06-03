@@ -7,4 +7,3 @@
 3. [gulp](https://github.com/Langery/Draft-paper/tree/master/gulp-text)：这个我也不知道为什么要放到这里...
 4. Babel
 5. ESlint
-
