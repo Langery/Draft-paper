@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arr To Tree</title>
+</head>
+<body>
+  <script>
+    /*
+     *  目标数组arr转为树结构
+     *  以 pid 作为父节点查找上级
+     */
+    var arr = [
+      {
+        id: '1',
+        name: 'one',
+        pid: '0'
+      },
+      {
+        id: '2',
+        name: 'two',
+        pid: '1'
+      },
+      {
+        id: '3',
+        name: 'three',
+        pid: '1'
+      },
+      {
+        id: '4',
+        name: 'four',
+        pid: '2'
+      },
+      {
+        id: '5',
+        name: 'five',
+        pid: '10'
+      },
+      {
+        id: '6',
+        name: 'six',
+        pid: '20'
+      },
+      {
+        id: '7',
+        name: 'seven',
+        pid: '30'
+      },
+      {
+        id: '8',
+        name: 'eight',
+        pid: '40'
+      },
+      {
+        id: '9',
+        name: 'nine',
+        pid: '10'
+      }
+    ];
+
+    function toTree(data) {
+      let result = []
+      if(!Array.isArray(data)) {
+        return result
+      }
+      data.forEach(item => {
+        delete item.children;
+      });
+      let map = {};
+      data.forEach(item => {
+        map[item.id] = item;
+      });
+      data.forEach(item => {
+        let parent = map[item.pid];
+        if(parent) {
+          (parent.children || (parent.children = [])).push(item);
+        } else {
+          result.push(item);
+        }
+      });
+      return result;
+    }
+    console.log(toTree(arr))
+  </script>
+</body>
+</html>
