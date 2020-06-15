@@ -61,19 +61,13 @@
 
     function toTree(data) {
       let result = []
-      if(!Array.isArray(data)) {
-        return result
-      }
-      data.forEach(item => {
-        delete item.children;
-      });
+      if(!Array.isArray(data)) return result
+      data.forEach(item => { delete item.children });
       let map = {};
-      data.forEach(item => {
-        map[item.id] = item;
-      });
+      data.forEach(item => { map[item.id] = item });
       data.forEach(item => {
         let parent = map[item.pid];
-        if(parent) {
+        if (parent) {
           (parent.children || (parent.children = [])).push(item);
         } else {
           result.push(item);
@@ -82,6 +76,28 @@
       return result;
     }
     console.log(toTree(arr))
+
+    /**
+     * 通过某个参数在 tree 里找到对应的 object
+     */
+    function deepQuery(tree, id) {
+      var isGet = false;
+      var retNode = null;
+      function deepSearch(tree,id){
+        for(var i = 0; i<tree.length; i++) {
+          if(tree[i].children && tree[i].children.length>0) {
+            deepSearch(tree[i].children,id);
+          }
+          if(id === tree[i].id || isGet) {
+            isGet||(retNode = tree[i]);
+            isGet = true;
+            break;
+          }
+        }
+      }
+      deepSearch(tree, id)
+      return retNode;
+    }
   </script>
 </body>
 </html>
